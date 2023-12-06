@@ -13,11 +13,11 @@ public class StatsService {
     }
 
     public int maxSales(long[] sales) {
-        int maxMonth = 0;
+        int maxMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[maxMonth]) {
-                maxMonth = i;
+            if (sales[i] >= sales[maxMonth]) { // значит, в рассматриваемом i-м месяце продаж больше
+                maxMonth = i; // запомним его как максимальный
             }
         }
         return maxMonth + 1;
@@ -38,8 +38,9 @@ public class StatsService {
 
     public int getLowAverageSumSales(long[] sales) {
         int lowAverageSumSales = 0;
+        long i = getAverageSumSales(sales);
         for (long sale : sales) {
-            if (sale < getAverageSumSales(sales)) {
+            if (sale < i) {
                 lowAverageSumSales++;
             }
         }

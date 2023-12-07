@@ -25,8 +25,8 @@ public class StatsService {
 
     public int getSumSales(long[] sales) {
         long sumSales = 0;
-        for (long x : sales) {
-            sumSales = sumSales + x;
+        for (long i : sales) {
+            sumSales = sumSales + i;
         }
         return (int) sumSales;
     }
@@ -38,9 +38,9 @@ public class StatsService {
 
     public int getLowAverageSumSales(long[] sales) {
         int lowAverageSumSales = 0;
-        long i = getAverageSumSales(sales);
-        for (long sale : sales) {
-            if (sale < i) {
+        long averageSumSales = getAverageSumSales(sales);
+        for (long i : sales) {
+            if (i < averageSumSales) {
                 lowAverageSumSales++;
             }
         }
@@ -49,9 +49,9 @@ public class StatsService {
 
     public int getHighAverageSumSales(long[] sales) {
         int highAverageSumSales = 0;
-        long i = getAverageSumSales(sales);
-        for (long sale : sales) {
-            if (sale > i) {
+        long averageSumSales = getAverageSumSales(sales);
+        for (long i : sales) {
+            if (i > averageSumSales) {
                 highAverageSumSales++;
             }
         }
